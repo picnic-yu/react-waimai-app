@@ -78,7 +78,12 @@ module.exports = {
             // npm install --save-dev node-sass
             {
                 test:/\.scss$/,
-                use:['style-loader','css-loader','sass-loader'],
+                use:['style-loader','css-loader','sass-loader',{
+                    loader:"sass-resources-loader",
+                    options:{
+                        resources:srcRoot+'/component/common.scss'
+                    }
+                }],
                 include:srcRoot
             },
             {
