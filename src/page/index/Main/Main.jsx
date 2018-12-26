@@ -2,6 +2,7 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 import ButtomBar from '../BottomBar/BottomBar.jsx'
+import Home from '../Home/Home.jsx'
 class Main extends React.Component {
     constructor(props){
         super(props)
@@ -10,7 +11,10 @@ class Main extends React.Component {
     render(){
         
         return (
-            <ButtomBar/>
+            <div>
+                <Home/>
+                <ButtomBar/>
+            </div>
         );
     }
 }
