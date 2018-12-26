@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
-
+import './BottomBar.scss'
+import { changeTab } from '../actions/tabAction';
 /**
  * @constructor <ButtomBar>
  * @description 首页底部tab栏
@@ -10,14 +11,23 @@ import {connect} from 'react-redux';
     constructor(props){
         super(props);
     }
+    changeTab(item){
+        this.props.dispatch(changeTab({
+            activeKey:item.key
+        }))
+    }
     renderItems(){
-        let tabs = ['首页','订单','我的'];
+        let tabs = this.props.tabs;
 
         return tabs.map((item,index) => {
+            let cls = item.key + ' btn-item';
+            if(item.key == this.props.activeKey){
+                cls += ' active';
+            }
             return (
-                <div key={index}>
+                <div key={index} className={cls} onClick={() => this.changeTab(item)}>
                     <div className='tab-icon'></div>
-                    <div className='btn-name'>{item}</div>
+                    <div className='btn-name'>{item.name}</div>
                 </div>
             )
         });
@@ -30,4 +40,7 @@ import {connect} from 'react-redux';
         )
     }
  }
- export default ButtomBar;
+export default connect(state=>({
+    tabs:state.tabReducer.tabs,
+    activeKey:state.tabReducer.activeKey
+}))(ButtomBar);

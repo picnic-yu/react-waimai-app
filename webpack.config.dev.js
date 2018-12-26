@@ -44,6 +44,9 @@ module.exports = {
     devServer:{
         contentBase:devPath
     },
+    resolve:{
+        extensions:['.js','.jsx','.scss']
+    },
     entry:entryMap,
     output:{
         path:devPath,
