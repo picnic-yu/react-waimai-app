@@ -69,6 +69,9 @@ module.exports = {
                         options:{
                             presets:['env','stage-0','react']//映射 es6  7  react
                         }
+                    },
+                    {
+                        loader:'eslint-loader'
                     }
                 ],
                 include:srcRoot
