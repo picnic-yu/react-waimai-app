@@ -54,6 +54,7 @@ module.exports = {
         path:devPath,
         filename:'[name].min.js'
     },
+    devtool:'#eval-source-map',//设置source map选项
     module:{
         rules:[
             {
