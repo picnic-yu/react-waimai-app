@@ -27,3 +27,9 @@
     transform:scaleY(0.5);
     transform-origin: 0,0;
 }
+// 省略号
+.one-line{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
