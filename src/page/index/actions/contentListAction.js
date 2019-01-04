@@ -1,6 +1,6 @@
 import { LIST_DATA } from "./actionTypes";
 import axios from 'axios';
-export const getListData =()  => {
+export const getListData =(page)  => {
     return (dispatch) =>{
 
         axios({
@@ -9,6 +9,7 @@ export const getListData =()  => {
         }).then(res=>{
             dispatch({
                 type:LIST_DATA,
+                page:page,
                 obj:res.data
             })
         });

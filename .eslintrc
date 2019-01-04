@@ -7,7 +7,9 @@
         "window":true,
         "document":true,
         "module":true,
-        "require":true
+        "require":true,
+        "console":true,
+        "alert":true
     },
     "rules":{
         "react/prop-types":"off",

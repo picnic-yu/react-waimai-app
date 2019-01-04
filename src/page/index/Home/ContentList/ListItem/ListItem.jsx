@@ -31,13 +31,11 @@ class ListItem extends React.Component{
         let halfstar = parseInt(scoreArray[1]) >=5 ? 1: 0;
         let nullstar = 5 -fullstar -halfstar;
         let starjsx =[];
-        window.console.log(fullstar)
         for (let i =0;i<fullstar;i++) {
             
             starjsx.push(<div key={i+'full'} className='star fullstar'></div>)
         }
         if(halfstar){
-            window.console.log(halfstar)
             for (let j =0;j<halfstar;j++) {
                
                 starjsx.push(<div key={j+'half'} className='star halfstar'></div>)
